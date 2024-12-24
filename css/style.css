@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Phonk";
+    src: url(/assets/Mona-Sans-MediumWide.woff);
+}
+@font-face {
+    font-family: "Unigeo";
+    src: url(/assets/Raleway-VariableFont_wght.ttf);
+}
+html{
+    scroll-behavior: smooth;
+}
+:root{
+    --accent:hsl(88, 100%, 49%);
+    --shadow: hsl(88, 100%, 49%,50%);
+    --primary:white;
+    --text:#ddd;
+    --bg:#000;
+}
+::-webkit-scrollbar{
+    height: 5px;
+    width: 7px;
+    border-radius: 50%;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--accent);
+    cursor: grab;
+}
+::-webkit-scrollbar-track{
+    background-color: #000;
+}
+*{
+    font-family: "Unigeo";
+    font-weight: 500;
+    color: var(--text);
+    transition: ease .4s;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: "Phonk";
+    color: var(--primary);
+}
+button{
+    font-weight: bold;
+}
+.navlink>a:hover,.link:hover{
+    color: var(--accent);
+    text-shadow: 0 0 5px var(--accent);
+}
+
+#toggleMenu{
+    transition: .3s ease;
+
+    >div{
+        width:20px;
+        height: 2px;
+        background-color:var(--primary);
+        border-radius: 2px;
+    }
+    >:nth-child(2){
+        width: 10px;
+        background-color: var(--accent);
+    }
+
+    &.active{
+        >#bar1{
+            transform: translateY(7px) rotate(45deg);
+        }
+        >#bar2{
+            transform: rotate(45deg);
+            scale:0;
+        }
+        >#bar3{
+            transform: translateY(-7px) rotate(-45deg);
+        }
+    }
+}
+
+#mobileNav{
+    inset: 0 0 0 0;
+    transform: translateX(100%);
+
+    &.active{
+        transform: translateX(0);
+    }
+}
+.glow{
+    box-shadow: 0 0 10px var(--shadow);
+}
+#hero{
+    background:linear-gradient(to bottom, rgba(0,0,0,0.75),rgba(0,0,0,1)), url(/assets/hero.webp);
+    background-blend-mode: darken;
+    background-position: center;
+    background-size: cover;
+}
+.classCard{
+    background-blend-mode: darken;
+    background-position: left;
+    background-size:cover;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:nth-of-type(1){
+        background:linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url(/assets/strength.jpg);
+        background-blend-mode: darken;
+        background-position: left;
+        background-size:cover;   
+    }
+    &:nth-of-type(2){
+        background:linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url(/assets/cardio.jpg);
+        background-blend-mode: darken;
+        background-position: left;
+        background-size:cover;    
+    }
+    &:nth-of-type(3){
+        background:linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url(/assets/flex.jpg);
+        background-blend-mode: darken;
+        background-position: left;
+        background-size:cover;    
+    }
+    &:nth-of-type(4){
+        background:linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url(/assets/mind.webp);
+        background-blend-mode: darken;
+        background-position: left;
+        background-size:cover;    
+    }
+
+    
+    >div>h3{
+        transform: rotate(-90deg) scale(1.5);
+        color: var(--accent);
+        transition-delay: -0.3s;
+    }
+    >div>p{
+        display:none;
+    }
+
+
+    &.selected{
+        border: 1px solid var(--accent);
+        width: 55%;
+        padding: 1.5rem;
+        align-items: last baseline;
+
+        >div>h3{
+            transform: rotate(0) scale(1);
+        }
+        >div>p{
+            display: block;
+        }
+    
+    }
+}
+
+#contact{
+    background:linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,.4)), url(/assets/hero.webp);
+    background-blend-mode: darken;
+    background-position: center;
+    background-size: cover;
+}
+
+
+@media (max-width:820px) {
+    .classCard{
+        width: 100%;
+        height: 100px;
+        >div>h3{
+            transform: scale(1.5);
+            transform-origin: center;
+        }
+
+        &.selected{
+            width: 100%;
+            height:400px;
+            >div>h3{
+                transform:scale(1);
+            }
+            >div>p{
+                display: block;
+            }
+        
+        }
+    }
+}
+
