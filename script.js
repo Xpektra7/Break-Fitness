@@ -11,24 +11,19 @@ words= ['"Joining Break Fitness was the best decision I made this year. The trai
 
 toggleMenu.addEventListener('click' , () => {
     toggleMenu.classList.toggle('active');
-    navMenu.classList.toggle('active');
-
-    if (navMenu.classList.contains('active')) {
-        document.body.style.overflowY = 'hidden';
-    } else {
-        document.body.style.overflowY = 'scroll';
-    }
+    navMenu.classList.toggle('active');    
 })
 
 console.log(classCards);
 
 classCards.forEach(card => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (maintenance) => {
         classCards.forEach(e => {
             e.classList.remove('selected');
         });
         card.classList.add('selected');
     })
+    maintenance(index);
 })
 
 function reduceIndex() {
@@ -46,6 +41,13 @@ function increaseIndex() {
 }
 
 function maintenance(e) {
+    if (navMenu.classList.contains('active')) {
+        document.body.style.overflowY = 'hidden';
+        document.body.style.overflowX = 'hidden';
+    } else {
+        document.body.style.overflowY = 'scroll';
+        document.body.style.overflowX = 'hidden';
+    }
     clientName.innerHTML = names[e - 1];
     clientWords.innerHTML = words[e - 1];
     count.innerHTML = index;
