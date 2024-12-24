@@ -13,6 +13,9 @@
 html{
     scroll-behavior: smooth;
 }
+body{
+    overflow-x: hidden;
+}
 :root{
     --accent:hsl(88, 100%, 49%);
     --shadow: hsl(88, 100%, 49%,50%);
