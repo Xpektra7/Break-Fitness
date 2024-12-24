@@ -93,7 +93,7 @@ button{
     box-shadow: 0 0 10px var(--shadow);
 }
 #hero{
-    background:linear-gradient(to bottom, rgba(0,0,0,0.75),rgba(0,0,0,1)), url(/assets/hero.webp);
+    background:linear-gradient(to bottom, rgba(0,0,0,0.3),rgba(0,0,0,1)), url(/assets/hero.webp);
     background-blend-mode: darken;
     background-position: center;
     background-size: cover;
