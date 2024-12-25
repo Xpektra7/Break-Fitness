@@ -558,6 +558,10 @@ video {
   position: absolute;
 }
 
+.relative {
+  position: relative;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -629,12 +633,13 @@ video {
   height: 85vh;
 }
 
-.h-full {
-  height: 100%;
+.h-\[max-content\] {
+  height: -moz-max-content;
+  height: max-content;
 }
 
-.w-1\/2 {
-  width: 50%;
+.h-full {
+  height: 100%;
 }
 
 .w-\[100\%\] {
@@ -831,6 +836,10 @@ video {
   padding-top: 4rem;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -856,6 +865,11 @@ video {
 
 .text-5xl {
   font-size: 3rem;
+  line-height: 1;
+}
+
+.text-7xl {
+  font-size: 4.5rem;
   line-height: 1;
 }
 
@@ -903,12 +917,6 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.backdrop-blur-lg {
-  --tw-backdrop-blur: blur(16px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-
 @font-face {
   font-family: "Phonk";
 
@@ -923,6 +931,7 @@ video {
 
 html{
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 :root{
@@ -1008,7 +1017,7 @@ button{
 }
 
 #hero{
-  background:linear-gradient(to bottom, rgba(0,0,0,0.75),rgba(0,0,0,1)), url(/assets/hero.webp);
+  background:linear-gradient(to bottom, rgba(0,0,0,0.3),rgba(0,0,0,1)), url(/assets/hero.webp);
   background-blend-mode: darken;
   background-position: center;
   background-size: cover;
@@ -1069,7 +1078,7 @@ button{
 }
 
 #contact{
-  background:linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,.4)), url(/assets/hero.webp);
+  background:linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,.3)), url(/assets/hero.webp);
   background-blend-mode: darken;
   background-position: center;
   background-size: cover;
@@ -1131,6 +1140,17 @@ button{
 @media (min-width: 480px) {
   .sm\:w-1\/2 {
     width: 50%;
+  }
+}
+
+@media (min-width: 660px) {
+  .tb\:flex-row {
+    flex-direction: row;
+  }
+
+  .tb\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 
@@ -1204,11 +1224,6 @@ button{
   .md\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
-  }
-
-  .md\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
   }
 
   .md\:text-6xl {

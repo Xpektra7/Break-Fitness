@@ -12,13 +12,7 @@
 }
 html{
     scroll-behavior: smooth;
-}
-body{
     overflow-x: hidden;
-    overflow-y:scroll;
-
-    &.active{
-        overflow-y:hidden;
 }
 :root{
     --accent:hsl(88, 100%, 49%);
@@ -164,7 +158,7 @@ button{
 }
 
 #contact{
-    background:linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,.4)), url(/assets/hero.webp);
+    background:linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,.3)), url(/assets/hero.webp);
     background-blend-mode: darken;
     background-position: center;
     background-size: cover;

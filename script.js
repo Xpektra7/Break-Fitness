@@ -11,8 +11,14 @@ words= ['"Joining Break Fitness was the best decision I made this year. The trai
 
 toggleMenu.addEventListener('click' , () => {
     toggleMenu.classList.toggle('active');
-    navMenu.classList.toggle('active');    
-    document.body.classList.toggle('.active');
+    navMenu.classList.toggle('active');
+})
+
+window.addEventListener('scroll', () => {
+    if (navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        toggleMenu.classList.toggle('active');
+    }
 })
 
 console.log(classCards);
