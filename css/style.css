@@ -104,21 +104,20 @@ button{
     display: flex;
     align-items: center;
     justify-content: center;
-    
     &:nth-of-type(1){
-        background:linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url(/assets/strength.jpg);
+        background:linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url(/assets/strength.webp);
         background-blend-mode: darken;
         background-position: left;
         background-size:cover;   
     }
     &:nth-of-type(2){
-        background:linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url(/assets/cardio.jpg);
+        background:linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url(/assets/cardio.webp);
         background-blend-mode: darken;
         background-position: left;
         background-size:cover;    
     }
     &:nth-of-type(3){
-        background:linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url(/assets/flex.jpg);
+        background:linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url(/assets/flex.webp);
         background-blend-mode: darken;
         background-position: left;
         background-size:cover;    
@@ -177,6 +176,7 @@ button{
         &.selected{
             width: 100%;
             height:400px;
+            aspect-ratio: 1/1;
             >div>h3{
                 transform:scale(1);
             }
